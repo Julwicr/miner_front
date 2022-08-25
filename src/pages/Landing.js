@@ -3,7 +3,7 @@
 export function Landing() {
   return (
     <div className="Landing">
-      
+      Hey lading
     </div>
   );
 }
