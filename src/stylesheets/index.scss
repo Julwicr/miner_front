@@ -1,3 +1,8 @@
+@import 'variables';
+@import './layouts/landing';
+@import './elements/login_form';
+
 * {
   margin: 0;
+  font-family: $main-font;
 }

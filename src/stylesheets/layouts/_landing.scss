@@ -1,0 +1,60 @@
+.landing {
+  height: 95vh;
+  background: url('https://pics.computerbase.de/1/0/3/7/5/9-e76e0679e4fd11ea/article-1280x720.2cad9186.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  h2 {
+    font-family: $header-font;
+    text-shadow: 2px 2px rgb(46, 44, 44);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: $bg-color;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  h3 {
+    color: $bg-color;
+    font-weight: 400;
+  }
+}
+
+
+.enter-btn {
+  background-color: $bg-color;
+  border: 2px solid $secondary-color;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: $secondary-color;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.enter-btn:hover {
+  background-color: #fff;
+}
+
+.enter-btn:active {
+  box-shadow: $secondary-color 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .enter-btn {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
