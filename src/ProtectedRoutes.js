@@ -1,9 +1,7 @@
 import { Navigate, Outlet } from "react-router";
+import Cookies from "js-cookie";
 
-const userAuth = () => {
-  const user = { loggedIn: false }
-  return user && user.loggedIn;
-}
+const userAuth = () => Cookies.get('loggedIn');
 
 const ProtectedRoutes = () => {
   const isAuth = userAuth();
