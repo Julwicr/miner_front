@@ -14,7 +14,7 @@ export function LoginForm() {
     const toFetch = `https://miner-api.herokuapp.com/auth?username=${user}&password=${pwd}`
     try {
       const response = await axios.post(toFetch);
-      console.log(response.data.username, response.data);
+      
       response.data.username === undefined ? setSuccess(false) : setSuccess(true);
 
       localStorage.setItem('firstName', response.data.first_name);
