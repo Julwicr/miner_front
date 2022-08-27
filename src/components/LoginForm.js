@@ -14,46 +14,46 @@ export function LoginForm() {
     const toFetch = `https://miner-api.herokuapp.com/auth?username=${user}&password=${pwd}`
     try {
       const response = await axios.post(toFetch);
-      console.log(response.data.username, response.status);
+      console.log(response.data.username, response.data);
       response.data.username === undefined ? setSuccess(false) : setSuccess(true);
 
+      localStorage.setItem('firstName', response.data.first_name);
+      localStorage.setItem('lastName', response.data.last_name);
+
       Cookies.set('loggedIn', true);
-      Navigate("/about");
     } catch (err) {
 
     }
-
-
   }
 
   return (
     <>
-    {success ? (
-      <Navigate to="/about" />
-    ) : (
-      <div className="login-form">
-        <p>Please enter the credentials you have securely received.</p>
-        <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label htmlFor='username'>Username:</label>
-          <input type="text"
-                  id="username"
-                  onChange={(e) => setUser(e.target.value)}
-                  value={user}
-                  required />
-        </div>
-        <div className="input-container">
-          <label htmlFor='password'>Password:</label>
-          <input type="password"
-                  id="password"
-                  onChange={(e) => setPwd(e.target.value)}
-                  required />
-        </div>
+      {success ? (
+        <Navigate to="/shop" />
+      ) : (
+        <div className="login-form">
+          <p>Please enter the credentials you have securely received.</p>
+          <form onSubmit={handleSubmit}>
+          <div className="input-container">
+            <label htmlFor='username'>Username:</label>
+            <input type="text"
+                    id="username"
+                    onChange={(e) => setUser(e.target.value)}
+                    value={user}
+                    required />
+          </div>
+          <div className="input-container">
+            <label htmlFor='password'>Password:</label>
+            <input type="password"
+                    id="password"
+                    onChange={(e) => setPwd(e.target.value)}
+                    required />
+          </div>
 
-          <button>Sign In</button>
-      </form>
-      </div>
-    )}
+            <button>Sign In</button>
+        </form>
+        </div>
+      )}
     </>
   );
 }
