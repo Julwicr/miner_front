@@ -1,9 +1,12 @@
 @import 'variables';
 @import './layouts/landing';
 @import './layouts/about';
+@import './layouts/shop';
 @import './elements/login_form';
 @import './elements/footer';
 @import './elements/btn';
+@import './elements/header';
+@import './elements/product_card';
 
 * {
   margin: 0;
