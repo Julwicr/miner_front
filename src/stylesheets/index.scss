@@ -1,8 +1,16 @@
 @import 'variables';
 @import './layouts/landing';
+@import './layouts/about';
 @import './elements/login_form';
+@import './elements/footer';
+@import './elements/btn';
 
 * {
   margin: 0;
   font-family: $main-font;
+}
+
+body{
+  display:flex;
+  flex-direction:column;
 }

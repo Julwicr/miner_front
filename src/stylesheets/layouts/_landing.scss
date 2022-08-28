@@ -1,5 +1,5 @@
 .landing {
-  height: 95vh;
+  height: 100vh;
   background: url('https://pics.computerbase.de/1/0/3/7/5/9-e76e0679e4fd11ea/article-1280x720.2cad9186.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,7 +10,7 @@
 
   h2 {
     font-family: $header-font;
-    text-shadow: 2px 2px rgb(46, 44, 44);
+    text-shadow: 4px 2px rgba(46, 44, 44, 0.5);
     font-size: 2.5rem;
     font-weight: 400;
     color: $bg-color;
@@ -21,6 +21,7 @@
   h3 {
     color: $bg-color;
     font-weight: 400;
+    text-shadow: 4px 2px rgba(46, 44, 44, 0.5);
   }
 }
 
