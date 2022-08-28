@@ -1,0 +1,28 @@
+.back-btn {
+  text-decoration: none;
+  background-color: $secondary-color;
+  padding: 10px;
+  color: $bg-color;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  &:hover{
+    animation: back 0.8s infinite;
+  }
+}
+
+@keyframes back {
+	0% {
+		transform: translateX(-5px);
+		box-shadow: 0 0 0 0 $main-color;
+	}
+
+	70% {
+		transform: translateX(0);
+		box-shadow: 0 0 0 5px rgba(84, 132, 60, 0.2);
+	}
+
+	100% {
+		transform: translateX(-5px);
+		box-shadow: 0 0 0 0 $main-color;
+	}
+}

@@ -1,0 +1,33 @@
+header {
+  position: sticky;
+  background-color: $secondary-color;
+  min-height:50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+  button {
+    background-color: $bg-color;
+    border-radius: 5px;
+    color: $secondary-color;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 15px;
+    outline: none;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: $main-color;
+      color: $bg-color;
+    }
+  }
+}
+
+.user-info {
+  padding: 0px 25px;
+  color: $bg-color;
+}

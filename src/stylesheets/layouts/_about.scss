@@ -1,0 +1,25 @@
+.about {
+  min-height: 100vh;
+  background-color: $main-color;
+
+  h3 {
+    color: $bg-color;
+  }
+
+  p {
+    color: $secondary-color;
+    padding: 50px;
+  }
+}
+
+.about-container {
+  width: 50vw;
+  margin: 0 auto;
+  padding: 60px 0px;
+}
+
+.about-btn {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}

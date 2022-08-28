@@ -1,0 +1,21 @@
+.footer {
+  margin-top:auto;
+  width: 100%;
+  min-height: 30px;
+  background-color: $secondary-color;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.8) 10px 4px 12px;
+}
+
+.about-link {
+  color: $bg-color;
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin: 0px 20px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
