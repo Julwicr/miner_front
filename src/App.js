@@ -14,7 +14,7 @@ function App() {
           <Route path="/about" element={<About />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/shop" element={<Shop />} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/product/:id" element={<Product />} />
         </Route>
       </Routes>
 
