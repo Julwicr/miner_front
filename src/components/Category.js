@@ -6,9 +6,9 @@ export const Category = ({ name, description }) => {
   return (
     <>
       <div className="category">
-        <button className="category-name" onClick={() => setIsShown(!isShown)}>
+        <span className="category-name" onClick={() => setIsShown(!isShown)}>
           {name}
-        </button>
+        </span>
         <input type="checkbox" />
       </div>
       {isShown ? (

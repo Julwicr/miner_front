@@ -32,9 +32,12 @@ export function Shop(props) {
           <Categories />
 
           <div className="side-bar-price">
-            <label for="price">Max-price</label>
-            <input type="range" id="price" name="price"
-                  min="0" max="100" step="10"/>
+            <form>
+              <label htmlFor="price">Max-price</label>
+              <input type="number" id="price" name="price"
+                     min="0" max="100" step="10"/>
+              <button>Filter</button>
+            </form>
           </div>
 
         </div>

@@ -52,7 +52,12 @@ export const Product = () => {
         </div>
 
         <div className="product-inventory">
-          { productInventory.quantity === 0 ? "Out of stock !" : `${productInventory.quantity} in stock !`}
+          <span>
+            { productInventory.quantity === 0 ? "Out of stock !" : `${productInventory.quantity} in stock !`}
+          </span>
+          <span className="small-txt">
+            Article nb. { product.article_number }
+          </span>
         </div>
       </div>
     </>

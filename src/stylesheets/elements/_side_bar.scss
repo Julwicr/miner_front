@@ -14,9 +14,9 @@
     text-decoration: underline;
   }
 
-  button {
+  span {
     text-decoration: none;
-    color: brown;
+    color: $main-color;
     font-size: 1.2rem;
     cursor: pointer;
     outline: none;
@@ -24,6 +24,9 @@
     border-radius: 0px;
     width: 150px;
     margin: 0px 10px;
+    display: inline-block;
+    border-bottom: 1px solid $main-color;
+    padding: 5px;
 
     &:hover {
       background-color: none;
@@ -49,8 +52,21 @@
   display: flex;
   flex-flow: column;
 
+  form {
+    display: flex;
+    flex-flow: column;
+  }
+
   input {
     width: 120px;
+    align-self: center;
+    margin: 5px;
+    border: 1px solid $main-color;
+    color: $main-color;
+
+    &:focus {
+      outline: none !important;
+    }
   }
 
   label {
@@ -61,5 +77,11 @@
     font-weight: 600;
   }
 
-
+  button {
+    align-self: center;
+    border: 1px solid $main-color;
+    color: $main-color;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
 }
