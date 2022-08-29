@@ -18,11 +18,16 @@
     height: 250px;
     grid-area: 4/4;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,0,0,0.95) 0%, rgba(53,115,23,0.95) 78%, rgba(23,111,23,1) 94%);
+    background: rgb(23,111,23);
+    background: radial-gradient(circle, rgba(23,111,23,1) 0%, rgba(25,79,23,1) 84%, rgba(25,79,23,1) 88%, rgba(23,111,23,1) 94%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid darken($main-color, $amount: 10%);
 
     img {
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 70%;
+      max-height: 70%;
     }
   }
 
@@ -33,6 +38,7 @@
     grid-area: 2/6;
     justify-content: center;
     align-items: center;
+    font-size: 1.4rem;
 
     img {
       max-width: 100%;
@@ -42,6 +48,10 @@
 
   &-category {
     grid-area: 5/2;
+
+    p {
+      padding: 10px;
+    }
   }
 
   &-info {
@@ -56,6 +66,7 @@
   }
 
   &-inventory {
-    grid-area: 5/7;
+    grid-area: 5/6;
+    font-size: 1.4rem;
   }
 }
