@@ -9,7 +9,6 @@ export const Category = ({ name, description }) => {
         <span className="category-name" onClick={() => setIsShown(!isShown)}>
           {name}
         </span>
-        <input type="checkbox" />
       </div>
       {isShown ? (
         <p className="category-description">

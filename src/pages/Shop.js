@@ -47,7 +47,7 @@ export function Shop(props) {
             <form onSubmit={handleSubmit}>
               <label htmlFor="price">Max-price</label>
               <input type="number" id="price" name="price"
-                     min="0" max="100" step="10"
+                     min="0" max="100"
                      onChange={(e) => setMaxPrice(e.target.value)}/>
               <button>Filter</button>
             </form>

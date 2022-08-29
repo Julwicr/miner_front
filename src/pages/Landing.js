@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export function Landing() {
   const [formIsShown, setFormIsShown] = useState(false);
-  console.log(formIsShown, 'here')
+  
   return (
     <div className="landing">
       <h2>Welcome to our private sales.</h2>
