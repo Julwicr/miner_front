@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from "../components/Header";
 import { ProductCard } from "../components/ProductCard";
 import { Categories } from "../components/Categories";
+import { FilterCategory } from "../components/FilterCategory";
 
 export function Shop(props) {
   const [products, setProducts] = useState([]);
@@ -42,6 +43,7 @@ export function Shop(props) {
       <div className="shop">
         <div className="side-bar">
           <Categories />
+          <FilterCategory />
 
           <div className="side-bar-price">
             <form onSubmit={handleSubmit}>
