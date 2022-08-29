@@ -25,7 +25,7 @@ export function LoginForm({ isShown, setIsShown }) {
 
     }
   }
-  console.log(isShown);
+  
   if (!isShown) return null;
   return (
     <>
