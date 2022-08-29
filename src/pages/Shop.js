@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from 'react';
 import Header from "../components/Header";
 import { ProductCard } from "../components/ProductCard";
+import { Categories } from "../components/Categories";
 
 export function Shop(props) {
   const [products, setProducts] = useState([]);
@@ -28,6 +29,13 @@ export function Shop(props) {
       <Header />
       <div className="shop">
         <div className="side-bar">
+          <Categories />
+
+          <div className="side-bar-price">
+            <label for="price">Max-price</label>
+            <input type="range" id="price" name="price"
+                  min="0" max="100" step="10"/>
+          </div>
 
         </div>
 

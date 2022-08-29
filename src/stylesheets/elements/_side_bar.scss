@@ -1,0 +1,65 @@
+.side-bar {
+  overflow: scroll;
+}
+
+.categories {
+  display: flex;
+  flex-flow: column;
+  max-width: 100%;
+
+  h2 {
+    padding: 10px;
+    font-size: 1.2rem;
+    color: $secondary-color;
+    text-decoration: underline;
+  }
+
+  button {
+    text-decoration: none;
+    color: brown;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    text-transform: none;
+    border-radius: 0px;
+    width: 150px;
+    margin: 0px 10px;
+
+    &:hover {
+      background-color: none;
+      background-color: darken($bg-color, 5%);
+    }
+  }
+
+  input {
+    padding: 5px;
+  }
+
+  p {
+    width: 150px;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+}
+
+.side-bar-price {
+  margin: 15px 0px;
+  display: flex;
+  flex-flow: column;
+
+  input {
+    width: 120px;
+  }
+
+  label {
+    padding: 10px;
+    font-size: 1.2rem;
+    color: $secondary-color;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+
+}

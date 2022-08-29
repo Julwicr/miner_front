@@ -27,6 +27,10 @@
   &-info {
     padding: 5px 15px;
 
+    p {
+      padding: 3px;
+    }
+
     a {
       color: $secondary-color;
       font-size: 1.3rem;

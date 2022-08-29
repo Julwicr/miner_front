@@ -2,11 +2,14 @@
 @import './layouts/landing';
 @import './layouts/about';
 @import './layouts/shop';
+@import './layouts/product';
+
 @import './elements/login_form';
 @import './elements/footer';
 @import './elements/btn';
 @import './elements/header';
 @import './elements/product_card';
+@import './elements/side_bar';
 
 * {
   margin: 0;

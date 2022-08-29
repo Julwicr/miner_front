@@ -1,5 +1,6 @@
 .back-btn {
   text-decoration: none;
+  border: 2px solid lighten($secondary-color, $amount: 5%);
   background-color: $secondary-color;
   padding: 10px;
   color: $bg-color;
