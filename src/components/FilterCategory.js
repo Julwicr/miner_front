@@ -1,21 +1,31 @@
 import { useState } from "react"
 
-export const FilterCategory = () => {
+export const FilterCategory = ({ handleFilters }) => {
+  const catList = ["Tool", "Gear", "Echantment", "Block", "Food"];
   const [checked, setChecked] = useState([]);
-  const checkList = ["Tool", "Gear", "Echantment", "Block", "Food"];
 
-  const handleChecked = () => {
 
+  const handleChecked = (index) => {
+    const newChecked = [...checked];
+    const checkedCat = catList[index];
+
+    if (checked.indexOf(checkedCat) === -1) {
+      newChecked.push(checkedCat);
+    } else {
+      newChecked.splice(checked.indexOf(checkedCat), 1);
+    }
+
+    // console.log(index, newChecked);
+    setChecked(newChecked);
+    handleFilters(newChecked);
   }
-
-  console.log(checked)
 
   return (
     <div className="side-bar-categoriesFilter">
-      {checkList.map((category, index) => (
-        <div className="side-bar-categoriesFilter-item">
+      {catList.map((category, index) => (
+        <div className="side-bar-categoriesFilter-item" key={index}>
           <label htmlFor={category}>{category}</label>
-          <input type="checkbox" id={category} onClick={() => handleChecked}/>
+          <input type="checkbox" id={category} onChange={() => handleChecked(index)}/>
         </div>
       ))}
     </div>

@@ -5,9 +5,11 @@ import { ProductCard } from "../components/ProductCard";
 import { Categories } from "../components/Categories";
 import { FilterCategory } from "../components/FilterCategory";
 
-export function Shop(props) {
+export function Shop() {
   const [products, setProducts] = useState([]);
   const [maxPrice,setMaxPrice] = useState('');
+
+  const [selectedCategory, setSelectedCategory] = useState([]);
 
 
     useEffect(() => {
@@ -17,12 +19,26 @@ export function Shop(props) {
         }).catch(err => console.log(err))
     }, []);
 
+
+    // filter by category
+
+    const filterCat = (products) => {
+      if (selectedCategory.length !== 0) {
+        const productsToFilter = [...products];
+
+        const filteredProducts = productsToFilter.filter((product) => selectedCategory.indexOf(product.product_category.name) !== -1);
+        setProducts(filteredProducts);
+      } else {
+        setProducts(products);
+      }
+    }
+
     const handleSubmit = async (e) => {
       e.preventDefault();
 
       try {
-        const response = await axios.get(`https://miner-api.herokuapp.com/price?max=${maxPrice}`);
-        setProducts(response.data);
+        const response = await axios.get(`https://miner-api.herokuapp.com/price?max=${maxPrice ? maxPrice : '500'}`);
+        filterCat(response.data);
       } catch (err) {
         console.log(err);
       }
@@ -43,7 +59,7 @@ export function Shop(props) {
       <div className="shop">
         <div className="side-bar">
           <Categories />
-          <FilterCategory />
+          <FilterCategory handleFilters={(filters) => setSelectedCategory(filters)}/>
 
           <div className="side-bar-price">
             <form onSubmit={handleSubmit}>
