@@ -22,12 +22,17 @@ export const FilterCategory = ({ handleFilters }) => {
 
   return (
     <div className="side-bar-categoriesFilter">
-      {catList.map((category, index) => (
-        <div className="side-bar-categoriesFilter-item" key={index}>
-          <label htmlFor={category}>{category}</label>
-          <input type="checkbox" id={category} onChange={() => handleChecked(index)}/>
-        </div>
-      ))}
+      <h4>
+        Categories:
+      </h4>
+      <div className="side-bar-categoriesFilter-boxes">
+        {catList.map((category, index) => (
+          <div className="side-bar-categoriesFilter-item" key={index}>
+            <label htmlFor={category}>{category}</label>
+            <input type="checkbox" id={category} onChange={() => handleChecked(index)}/>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

@@ -59,6 +59,9 @@ export function Shop() {
       <div className="shop">
         <div className="side-bar">
           <Categories />
+
+          <h2>Filters:</h2>
+          
           <FilterCategory handleFilters={(filters) => setSelectedCategory(filters)}/>
 
           <div className="side-bar-price">
