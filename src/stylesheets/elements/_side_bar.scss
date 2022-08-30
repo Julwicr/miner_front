@@ -1,11 +1,5 @@
 .side-bar {
   overflow: scroll;
-}
-
-.categories {
-  display: flex;
-  flex-flow: column;
-  max-width: 100%;
 
   h2 {
     padding: 10px;
@@ -13,6 +7,13 @@
     color: $secondary-color;
     text-decoration: underline;
   }
+}
+
+.categories {
+  display: flex;
+  flex-flow: column;
+  max-width: 100%;
+  margin-bottom: 20px;
 
   span {
     text-decoration: none;
@@ -73,8 +74,6 @@
     padding: 10px;
     font-size: 1.2rem;
     color: $secondary-color;
-    text-decoration: underline;
-    font-weight: 600;
   }
 
   button {
@@ -83,5 +82,34 @@
     color: $main-color;
     padding: 5px 10px;
     border-radius: 5px;
+    margin-top: 20px;
+  }
+}
+
+.side-bar-categoriesFilter {
+  h4 {
+    padding: 10px;
+    font-size: 1.2rem;
+    color: $secondary-color;
+    font-weight: 400;
+  }
+
+  &-boxes {
+    width: 100%;
+  }
+
+  &-item {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px $main-color dashed;
+
+    label {
+      padding: 5px;
+    }
+
+    input {
+      margin: 0px 10px;
+    }
   }
 }
