@@ -35,10 +35,10 @@
     }
   }
 
-  input {
-    padding: 5px;
-  }
 
+}
+
+.category {
   p {
     width: 150px;
     padding: 10px;
@@ -46,6 +46,11 @@
     font-weight: 400;
   }
 
+  &-info {
+    transition: height ease 0.5s;
+    overflow: hidden;
+    height: 0px;
+  }
 }
 
 .side-bar-price {
