@@ -24,6 +24,17 @@
   gap: 10px;
 }
 
+.noProduct {
+  color: $bg-color;
+  font-family: $header-font;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 250px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 @media (max-width: 1245px) {
   .products-container {
     justify-content: center;
