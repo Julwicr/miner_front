@@ -55,6 +55,9 @@ export function Shop() {
                     img_path={product.img_path}/>
     );
 
+
+    const noProduct = <div className="noProduct">Sorry, no product matches your search.</div>;
+
   return (
     <>
       <Header />
@@ -85,7 +88,7 @@ export function Shop() {
         </div>
 
         <div className="products-container">
-          {listProducts}
+          {listProducts.length === 0 ? noProduct : listProducts}
         </div>
       </div>
     </>
