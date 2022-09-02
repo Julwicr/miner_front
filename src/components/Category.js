@@ -1,9 +1,13 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
-export const Category = ({ name, description }) => {
+export const Category = ({ name, description, allShown }) => {
   const [isShown, setIsShown] = useState(false);
 
   const categoryInfoRef = useRef();
+
+  useEffect(() => {
+    setIsShown(allShown);
+  }, [allShown]);
 
   return (
     <>
