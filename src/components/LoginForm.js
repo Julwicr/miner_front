@@ -7,6 +7,7 @@ export function LoginForm({ isShown, setIsShown }) {
   const [user,setUser] = useState('');
   const [pwd, setPwd] = useState('');
   const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,17 +16,19 @@ export function LoginForm({ isShown, setIsShown }) {
     try {
       const response = await axios.post(toFetch);
 
-      response.data.username === undefined ? setSuccess(false) : setSuccess(true);
-
-      localStorage.setItem('firstName', response.data.first_name);
-      localStorage.setItem('lastName', response.data.last_name);
-
-      Cookies.set('loggedIn', true);
+      if (response.data.username === undefined) {
+        setFailed(true);
+      } else {
+        setSuccess(true);
+        localStorage.setItem('firstName', response.data.first_name);
+        localStorage.setItem('lastName', response.data.last_name);
+        Cookies.set('loggedIn', true);
+      }
     } catch (err) {
-
+      console.log(err);
     }
   }
-  
+
   if (!isShown) return null;
   return (
     <>
@@ -34,7 +37,9 @@ export function LoginForm({ isShown, setIsShown }) {
       ) : (
         <div className="login-form">
           <button className='close-btn' onClick={setIsShown}>X</button>
+          {failed ?  <p>Sorry, wrong credentials.</p> :
           <p>Please enter the credentials you have securely received.</p>
+          }
           <form onSubmit={handleSubmit} className="login-form-f">
           <div className="input-container">
             <label htmlFor='username'>Username:</label>
