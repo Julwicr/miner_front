@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const FilterCategory = ({ handleFilters }) => {
-  const catList = ["Tool", "Gear", "Echantment", "Block", "Food"];
+  const catList = ["Tool", "Gear", "Enchantment", "Block", "Food"];
   const [checked, setChecked] = useState([]);
 
 
