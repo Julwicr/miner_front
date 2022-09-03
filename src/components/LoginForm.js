@@ -29,13 +29,13 @@ export function LoginForm({ isShown, setIsShown }) {
     }
   }
 
-  if (!isShown) return null;
   return (
     <>
       {success ? (
         <Navigate to="/shop" />
       ) : (
-        <div className="login-form">
+        <div className="login-form"
+             style={isShown ? {opacity: 1, transform: 'none'} : {opacity: 0.5, transform: 'translateY(1000px)'}}>
           <button className='close-btn' onClick={setIsShown}>X</button>
           {failed ?  <p>Sorry, wrong credentials.</p> :
           <p>Please enter the credentials you have securely received.</p>
