@@ -12,19 +12,21 @@ export function LoginForm({ isShown, setIsShown }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const toFetch = `https://miner-api.herokuapp.com/auth?username=${user}&password=${pwd}`
+    const credentials = {
+      username: user,
+      password: pwd
+    }
+    const toFetch = 'http://localhost:3000/auth/login'
     try {
-      const response = await axios.post(toFetch);
+      const response = await axios.post(toFetch, credentials, { headers: {'Access-Control-Allow-Origin': '*'} });
 
-      if (response.data.username === undefined) {
-        setFailed(true);
-      } else {
-        setSuccess(true);
-        localStorage.setItem('firstName', response.data.first_name);
-        localStorage.setItem('lastName', response.data.last_name);
-        Cookies.set('loggedIn', true);
-      }
+      localStorage.setItem('firstName', response.data.first_name);
+      localStorage.setItem('lastName', response.data.last_name);
+      localStorage.setItem('token', response.data.token);
+      Cookies.set('loggedIn', true);
+      setSuccess(true);
     } catch (err) {
+      setFailed(true);
       console.log(err);
     }
   }

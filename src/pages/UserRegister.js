@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { Navigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export const UserRegister = () => {
   const [success, setSuccess] = useState(false);
@@ -61,7 +61,7 @@ export const UserRegister = () => {
           <form onSubmit={handleSubmit} className="register-form">
 
               <div className="register-form-user">
-                <div className="">
+                <div className="register-form-input">
                   <label htmlFor='username'>Username:</label>
                   <input type="text"
                           id="username"
@@ -69,14 +69,14 @@ export const UserRegister = () => {
                           value={formData.username}
                           required />
                 </div>
-                <div className="">
+                <div className="register-form-input">
                   <label htmlFor='password'>Password:</label>
                   <input type="password"
                           id="password"
                           onChange={(e) => setFormData({...formData, password: e.target.value})}
                           required />
                 </div>
-                <div className="">
+                <div className="register-form-input">
                   <label htmlFor='email'>email:</label>
                   <input type="email"
                           id="email"
@@ -85,7 +85,7 @@ export const UserRegister = () => {
                           required />
                 </div>
 
-                <div className="">
+                <div className="register-form-input">
                   <label htmlFor='firstName'>First name:</label>
                   <input type="text"
                           id="firstName"
@@ -93,7 +93,7 @@ export const UserRegister = () => {
                           value={formData.firstName}
                           required />
                 </div>
-                <div className="">
+                <div className="register-form-input">
                   <label htmlFor='lastName'>Last name:</label>
                   <input type="text"
                           id="lastName"
@@ -101,7 +101,7 @@ export const UserRegister = () => {
                           value={formData.lastName}
                           required />
                 </div>
-                <div className="">
+                <div className="register-form-input">
                   <label htmlFor='telephone'>Telephone:</label>
                   <input type="text"
                           id="telephone"
@@ -113,28 +113,28 @@ export const UserRegister = () => {
 
               <div className="register-form-address">
                 <p>Optionnal.</p>
-                <div className="">
+                <div className="register-form-input">
                   <label htmlFor='address'>Address:</label>
                   <input type="text"
                           id="address"
                           onChange={(e) => setFormData({...formData, address: e.target.value})}
                           value={formData.address} />
                 </div>
-                <div className="">
+                <div className="register-form-input">
                   <label htmlFor='city'>City:</label>
                   <input type="text"
                           id="city"
                           onChange={(e) => setFormData({...formData, city: e.target.value})}
                           value={formData.city} />
                 </div>
-                <div className="">
+                <div className="register-form-input">
                   <label htmlFor='postalCode'>Postal code:</label>
                   <input type="text"
                           id="postalCode"
                           onChange={(e) => setFormData({...formData, postalCode: e.target.value})}
                           value={formData.postalCode} />
                 </div>
-                <div className="">
+                <div className="register-form-input">
                   <label htmlFor='country'>Country:</label>
                   <input type="text"
                           id="country"
@@ -145,6 +145,7 @@ export const UserRegister = () => {
 
                 <button className='register-btn'>Register</button>
             </form>
+            <Link to="/" className="back-btn about-btn">Back</Link>
         </div>
         }
     </>

@@ -1,12 +1,25 @@
 .register-form-wrapper {
+  background: url('https://external-preview.redd.it/VZqDZ_t6_WX850zWiv4U506fuNwujS9yVvbVzrUQ_6k.jpg?auto=webp&s=052439aca7de03af67c7b1f2dd4e6feed038c3d2');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
+  p {
+    padding: 5px;
+  }
 }
 
 .register-form {
+  background-color: $secondary-color;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: $bg-color;
+  border-radius: 5px;
+  width: 400px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,9 +32,16 @@
   &-address {
     margin: 25px;
   }
+
+  &-input {
+    display: flex;
+    justify-content: space-between;
+    width: 280px;
+    padding: 4px;
+  }
 }
 
 .register-btn {
-  height: 50px;
+  height: 25px;
   width: 150px;
 }
