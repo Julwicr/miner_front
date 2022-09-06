@@ -8,7 +8,7 @@ export const Categories = () => {
   const [allShown, setAllShown] = useState(false);
 
     useEffect(() => {
-      axios.get('https://miner-api.herokuapp.com/categories')
+      axios.get('https://miner-api.herokuapp.com/categories', { headers: {'Access-Control-Allow-Origin': '*', 'Authorization': localStorage.getItem('token')} })
         .then(res => {
           setCategories(res.data)
         }).catch(err => console.log(err))

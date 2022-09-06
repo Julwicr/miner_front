@@ -16,7 +16,7 @@ export function LoginForm({ isShown, setIsShown }) {
       username: user,
       password: pwd
     }
-    const toFetch = 'http://localhost:3000/auth/login'
+    const toFetch = 'https://miner-api.herokuapp.com/auth/login'
     try {
       const response = await axios.post(toFetch, credentials, { headers: {'Access-Control-Allow-Origin': '*'} });
 

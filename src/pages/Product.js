@@ -13,7 +13,7 @@ export const Product = () => {
   const [productInventory, setProductInventory] = useState('');
 
   useEffect(() => {
-    axios.get(`https://miner-api.herokuapp.com/products/${id}`)
+    axios.get(`https://miner-api.herokuapp.com/products/${id}`, { headers: {'Access-Control-Allow-Origin': '*', 'Authorization': localStorage.getItem('token')} })
       .then(res => {
         setProduct(res.data)
         setProductCategory(res.data.product_category)

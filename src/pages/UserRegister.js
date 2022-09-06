@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export const UserRegister = () => {
   const [success, setSuccess] = useState(false);
@@ -21,7 +22,7 @@ export const UserRegister = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const toFetch = 'http://localhost:3000/users';
+    const toFetch = 'https://miner-api.herokuapp.com/users';
     const option = {
       headers: {'Access-Control-Allow-Origin': '*'}
     }
@@ -30,6 +31,7 @@ export const UserRegister = () => {
       setSuccess(true);
       localStorage.setItem('firstName', formData.first_name);
       localStorage.setItem('lastName', formData.last_name);
+      Cookies.set('loggedIn', true);
       logNewUser(formData.username, formData.password);
     } catch (err) {
       console.log(err);
@@ -43,7 +45,7 @@ export const UserRegister = () => {
       username: username,
       password: password
     }
-    const fetch = axios.post('http://localhost:3000/auth/login', userCredentials, { headers: {'Access-Control-Allow-Origin': '*'} })
+    const fetch = axios.post('https://miner-api.herokuapp.com/auth/login', userCredentials, { headers: {'Access-Control-Allow-Origin': '*'} })
     fetch.then((res) => localStorage.setItem('token', res.data.token));
   }
 
@@ -52,7 +54,13 @@ export const UserRegister = () => {
   return (
     <>
       {success ?
-        <div>You are registered</div> :
+        <div className="register-form-wrapper">
+          <div className="success-register">
+            <p>You are registered !</p>
+            <Link to="/shop" className="shop-link">Go to shop.</Link>
+          </div>
+
+        </div> :
 
         <div className="register-form-wrapper">
 

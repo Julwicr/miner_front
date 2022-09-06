@@ -19,7 +19,7 @@ export function Shop() {
 
 
     useEffect(() => {
-      axios.get('http://localhost:3000/products', memoizedHeader)
+      axios.get('https://miner-api.herokuapp.com/products', memoizedHeader)
         .then(res => {
           setProducts(res.data)
         }).catch(err => console.log(err))
@@ -42,7 +42,7 @@ export function Shop() {
     const handleSubmit = async (e) => {
       e.preventDefault();
 
-      const toFetch = `http://localhost:3000/products?${maxPrice ? 'max=' + maxPrice : ''}&${minPrice ? 'min=' + minPrice : ''}`
+      const toFetch = `https://miner-api.herokuapp.com/products?${maxPrice ? 'max=' + maxPrice : ''}&${minPrice ? 'min=' + minPrice : ''}`
       try {
         const response = await axios.get(toFetch, memoizedHeader);
         filterCat(response.data);
