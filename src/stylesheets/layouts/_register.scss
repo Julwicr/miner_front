@@ -1,0 +1,27 @@
+.register-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &-user {
+    margin: 25px;
+  }
+
+  &-address {
+    margin: 25px;
+  }
+}
+
+.register-btn {
+  height: 50px;
+  width: 150px;
+}
