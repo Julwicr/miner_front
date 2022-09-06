@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Header from "../components/Header";
 import { ProductCard } from "../components/ProductCard";
 import { Categories } from "../components/Categories";
@@ -12,15 +12,18 @@ export function Shop() {
 
   const [selectedCategory, setSelectedCategory] = useState([]);
 
+  const memoizedHeader = useMemo(() => {
+    const head = { headers: {'Access-Control-Allow-Origin': '*', 'Authorization': localStorage.getItem('token')} }
+    return head
+  }, [])
 
-  const head = { headers: {'Access-Control-Allow-Origin': '*', 'Authorization': localStorage.getItem('token')} }
 
     useEffect(() => {
-      axios.get('http://localhost:3000/products', head)
+      axios.get('http://localhost:3000/products', memoizedHeader)
         .then(res => {
           setProducts(res.data)
         }).catch(err => console.log(err))
-    }, [head]);
+    }, [memoizedHeader]);
 
 
     // filter by category
@@ -41,7 +44,7 @@ export function Shop() {
 
       const toFetch = `http://localhost:3000/products?${maxPrice ? 'max=' + maxPrice : ''}&${minPrice ? 'min=' + minPrice : ''}`
       try {
-        const response = await axios.get(toFetch, head);
+        const response = await axios.get(toFetch, memoizedHeader);
         filterCat(response.data);
       } catch (err) {
         console.log(err);
