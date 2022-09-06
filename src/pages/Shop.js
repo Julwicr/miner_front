@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Header from "../components/Header";
 import { ProductCard } from "../components/ProductCard";
 import { Categories } from "../components/Categories";
@@ -12,13 +12,18 @@ export function Shop() {
 
   const [selectedCategory, setSelectedCategory] = useState([]);
 
+  const memoizedHeader = useMemo(() => {
+    const head = { headers: {'Access-Control-Allow-Origin': '*', 'Authorization': localStorage.getItem('token')} }
+    return head
+  }, [])
+
 
     useEffect(() => {
-      axios.get('https://miner-api.herokuapp.com/products')
+      axios.get('https://miner-api.herokuapp.com/products', memoizedHeader)
         .then(res => {
           setProducts(res.data)
         }).catch(err => console.log(err))
-    }, []);
+    }, [memoizedHeader]);
 
 
     // filter by category
@@ -39,7 +44,7 @@ export function Shop() {
 
       const toFetch = `https://miner-api.herokuapp.com/products?${maxPrice ? 'max=' + maxPrice : ''}&${minPrice ? 'min=' + minPrice : ''}`
       try {
-        const response = await axios.get(toFetch);
+        const response = await axios.get(toFetch, memoizedHeader);
         filterCat(response.data);
       } catch (err) {
         console.log(err);
