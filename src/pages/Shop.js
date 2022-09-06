@@ -13,12 +13,14 @@ export function Shop() {
   const [selectedCategory, setSelectedCategory] = useState([]);
 
 
+  const head = { headers: {'Access-Control-Allow-Origin': '*', 'Authorization': localStorage.getItem('token')} }
+
     useEffect(() => {
-      axios.get('https://miner-api.herokuapp.com/products')
+      axios.get('http://localhost:3000/products', head)
         .then(res => {
           setProducts(res.data)
         }).catch(err => console.log(err))
-    }, []);
+    }, [head]);
 
 
     // filter by category
@@ -37,9 +39,9 @@ export function Shop() {
     const handleSubmit = async (e) => {
       e.preventDefault();
 
-      const toFetch = `https://miner-api.herokuapp.com/products?${maxPrice ? 'max=' + maxPrice : ''}&${minPrice ? 'min=' + minPrice : ''}`
+      const toFetch = `http://localhost:3000/products?${maxPrice ? 'max=' + maxPrice : ''}&${minPrice ? 'min=' + minPrice : ''}`
       try {
-        const response = await axios.get(toFetch);
+        const response = await axios.get(toFetch, head);
         filterCat(response.data);
       } catch (err) {
         console.log(err);
