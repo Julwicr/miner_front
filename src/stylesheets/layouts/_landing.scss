@@ -58,6 +58,16 @@
   transform: translate(2px, 2px);
 }
 
+.register-link {
+  color: $bg-color;
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 @media (min-width: 768px) {
   .enter-btn {
     min-width: 120px;

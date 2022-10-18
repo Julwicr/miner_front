@@ -12,11 +12,17 @@ export function Landing() {
       <LoginForm isShown={formIsShown} setIsShown={() => setFormIsShown(false)}/>
       {
         Cookies.get('loggedIn') ?
-        <Link to="/shop" className="enter-btn">Enter</Link> :
+        <>
+          <Link to="/shop" className="enter-btn">Enter</Link>
+          <h3>The right tools for the best miner in town !</h3>
+        </>
 
-        <button className="enter-btn" onClick={() => setFormIsShown(true)}>Log In</button>
+        :
+        <>
+          <button className="enter-btn" onClick={() => setFormIsShown(true)}>Log In</button>
+          <Link to="/register" className="register-link">Not a member yet ? Register here.</Link>
+        </>
       }
-      <h3>The right tools for the best miner in town !</h3>
     </div>
   );
 }
